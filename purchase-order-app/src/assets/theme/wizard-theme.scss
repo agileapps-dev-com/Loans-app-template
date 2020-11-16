@@ -13,3 +13,5 @@ $theme-colors: (
 
 // set the base font family
 $font-family-base: 'Open Sans';
+
+@import "./addon-styles.scss";
