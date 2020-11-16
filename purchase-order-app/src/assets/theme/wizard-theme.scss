@@ -1,0 +1,15 @@
+@import "node_modules/ace-lib-theme/assets/scss/theme.scss";
+
+$theme-colors: (
+    "primary": #6200ee,
+    "secondary": #03dac6,
+    "error": #b00020,
+    "light": #f8f9fa,
+    "dark": #343a40
+  );
+
+  //import font
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+// set the base font family
+$font-family-base: 'Open Sans';

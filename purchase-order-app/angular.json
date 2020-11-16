@@ -62,7 +62,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "purchase-order-app:build"
+            "browserTarget": "purchase-order-app:build",
+            "proxyConfig": "proxy.conf.json",
+            "ssl": true
           },
           "configurations": {
             "production": {
@@ -119,6 +121,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "purchase-order-app"
 }

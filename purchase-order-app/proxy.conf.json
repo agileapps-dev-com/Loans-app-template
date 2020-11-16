@@ -1,0 +1,12 @@
+{
+  "/networking": {
+    "target": "https://satheesh.agileappslive.com",
+    "secure": true,
+    "changeOrigin": "true"
+  },
+  "/ace-lib": {
+    "target": "https://satheesh.agileappslive.com",
+    "secure": true,
+    "changeOrigin": "true"
+  }
+}
