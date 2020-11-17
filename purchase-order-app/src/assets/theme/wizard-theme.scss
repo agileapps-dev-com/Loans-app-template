@@ -1,17 +1,16 @@
-@import "node_modules/ace-lib-theme/assets/scss/theme.scss";
 
 $theme-colors: (
-    "primary": #6200ee,
-    "secondary": #03dac6,
-    "error": #b00020,
-    "light": #f8f9fa,
-    "dark": #343a40
+  "primary": #00065e,
+  "secondary": #03dac6,
+  "error": #b00020,
+  "light": #f8f9fa,
+  "dark": #343a40
   );
-
   //import font
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+  
+  // set the base font family
+  $font-family-base: 'Roboto Condensed';
 
-// set the base font family
-$font-family-base: 'Open Sans';
-
+@import "node_modules/ace-lib-theme/assets/scss/theme.scss";
 @import "./addon-styles.scss";

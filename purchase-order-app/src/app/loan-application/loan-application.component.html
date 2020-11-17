@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+
+        <mat-horizontal-stepper #stepper>
+            <mat-step>
+
+                <ng-template matStepLabel>Instructions</ng-template>
+                <h2> Nunc eu nibh pulvinar, fringilla leo at, semper elit.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel iaculis dolor, ut luctus nibh. Sed
+                    blandit
+                    ante a orci rhoncus dapibus eget id tortor. Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus.
+                    Nunc eu nibh pulvinar, fringilla leo at, semper elit. Interdum et malesuada fames ac ante ipsum
+                    primis in
+                    faucibus. Phasellus vol</p>
+
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>In tempor sem et lacus auctor cursus.</li>
+                    <li>Curabitur maximus turpis eu egestas aliquet.</li>
+                    <li>Aliquam sit amet risus in risus pharetra condimentum nec quis urna.</li>
+                </ul>
+
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+
+            </mat-step>
+            <mat-step label="Fill out your address">
+                <ace-record-form object-id="c162283a2ff9432da9cc6e56381bc358" record-id="-1" id="rf_si"
+                    css-classlist="bg-white border-0 p-0"></ace-record-form>
+
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+
+            </mat-step>
+            <mat-step label="Additional info">
+                <ace-record-form object-id="da60bdfecc3843c9b3ff11a7becdc6d1" record-id="-1"  id="rf_pi" 
+                    css-classlist="bg-white border-0 p-0"></ace-record-form>
+
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+
+            </mat-step>
+            <mat-step>
+
+                <ng-template matStepLabel>Loan Info & Docs</ng-template>
+                <h2> Nunc eu nibh pulvinar, fringilla leo at, semper elit.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel iaculis dolor, ut luctus nibh. Sed
+                    blandit
+                    ante a orci rhoncus dapibus eget id tortor. Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus.
+                    Nunc eu nibh pulvinar, fringilla leo at, semper elit. Interdum et malesuada fames ac ante ipsum
+                    primis in
+                    faucibus. Phasellus vol</p>
+
+                <ul>
+                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <li>In tempor sem et lacus auctor cursus.</li>
+                    <li>Curabitur maximus turpis eu egestas aliquet.</li>
+                    <li>Aliquam sit amet risus in risus pharetra condimentum nec quis urna.</li>
+                </ul>
+
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Done</ng-template>
+                <p>You are now done.</p>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+
+    </div>
+    <div class="col"></div>
+</div>

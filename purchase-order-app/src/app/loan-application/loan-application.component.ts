@@ -1,13 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css']
+  selector: 'app-loan-application',
+  templateUrl: './loan-application.component.html',
+  styleUrls: ['./loan-application.component.css']
 })
-export class OrdersComponent implements OnInit{
+export class LoanApplicationComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -22,4 +21,5 @@ export class OrdersComponent implements OnInit{
       secondCtrl: ['', Validators.required]
     });
   }
+
 }
