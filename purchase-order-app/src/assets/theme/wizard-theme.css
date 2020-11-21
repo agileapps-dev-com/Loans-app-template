@@ -1334,13 +1334,18 @@ ace-user-profile .user-info-text-block .user-role {
 
 /* line 1, src/assets/theme/addon-styles.scss */
 header {
-  border-bottom: 5px solid #343a40; }
+  border-bottom: 5px solid #343a40;
+  background-color: #FFFFFF; }
 
-/* line 7, src/assets/theme/addon-styles.scss */
+/* line 8, src/assets/theme/addon-styles.scss */
 .mat-step-icon {
   background-color: #00065e;
   color: #FFFFFF; }
 
-/* line 13, src/assets/theme/addon-styles.scss */
+/* line 14, src/assets/theme/addon-styles.scss */
+.form-card {
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+
+/* line 20, src/assets/theme/addon-styles.scss */
 .button-separator-space {
   margin-right: 10px; }

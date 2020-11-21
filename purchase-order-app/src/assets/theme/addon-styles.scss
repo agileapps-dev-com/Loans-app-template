@@ -1,5 +1,6 @@
 header{
 	border-bottom: 5px solid map-get($theme-colors, "dark");
+	background-color: map-get($theme-colors, "light");
 }
 
 
@@ -7,6 +8,12 @@ header{
 .mat-step-icon{
 	background-color: map-get($theme-colors, "primary");
 	color: map-get($theme-colors, "light");
+}
+
+// loan card
+.form-card{
+	// box-shadow: 0 1px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	border: 1px solid rgba(0,0,0,.2);
 }
 
 //utility classes
