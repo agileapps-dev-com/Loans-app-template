@@ -8,7 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoanApplicationComponent implements OnInit {
   isLinear = false;
-  @ViewChild('loanApplicationFormRef') loanApplicationFormRef: ElementRef;
+  @ViewChild('loanInformationFormRef') loanInformationFormRef: ElementRef;
+  @ViewChild('applicantInfoFormRef') applicantInfoFormRef: ElementRef;
 
   constructor(private _formBuilder: FormBuilder) { }
 
@@ -16,9 +17,13 @@ export class LoanApplicationComponent implements OnInit {
 
   }
 
-  loanApplicationFormOnloadHandler(eventData) {
-     this.hideRecordFormHeader(this.loanApplicationFormRef);
+  loanInformationFormOnloadHandler(eventData) {
+     this.hideRecordFormHeader(this.loanInformationFormRef);
   }
+
+  applicantInformationFormOnloadHandler(eventData) {
+    this.hideRecordFormHeader(this.applicantInfoFormRef);
+ }
 
   /**
    * Hide the default tabs from ace-record-form

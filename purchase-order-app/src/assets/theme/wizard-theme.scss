@@ -10,8 +10,18 @@ $theme-colors: (
   //import font
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
   
-  // set the base font family
+  //set the base font family
   $font-family-base: 'Roboto Condensed';
+
+  //ace-lib button styles
+  $ace-lib-btn-padding : 10px 20px;
+
+  //ace-lib radio styles
+  $ace-lib-radio-button-color: map-get($theme-colors, "primary");
+  
+  //ace-lib checkbox styles
+  $ace-lib-checkbox-color: map-get($theme-colors, "primary");
+
 
 @import "node_modules/ace-lib-theme/assets/scss/theme.scss";
 @import "./addon-styles.scss";

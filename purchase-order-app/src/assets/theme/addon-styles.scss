@@ -9,7 +9,10 @@ header{
 	color: map-get($theme-colors, "light");
 }
 
-
+//utility classes
+.button-separator-space{
+	margin-right: 10px;
+}
 
 
 

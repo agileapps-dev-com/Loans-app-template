@@ -409,7 +409,7 @@ input.ace-field-input.form-control::placeholder {
 
 /* line 3, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
 .mat-checkbox .mat-checkbox-layout .mat-checkbox-frame {
-  border: 1px solid #03dac6; }
+  border: 1px solid #00065e; }
 
 /* line 6, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
 .mat-checkbox .mat-checkbox-layout .mat-checkbox-checkmark {
@@ -433,7 +433,7 @@ input.ace-field-input.form-control::placeholder {
 
 /* line 26, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
 .mat-checkbox.mat-checkbox-checked .mat-checkbox-background {
-  background-color: #03dac6; }
+  background-color: #00065e; }
 
 /* line 29, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
 .mat-checkbox.mat-checkbox-checked .mat-checkbox-checkmark {
@@ -441,15 +441,15 @@ input.ace-field-input.form-control::placeholder {
 
 /* line 34, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
 .mat-checkbox.mat-checkbox-indeterminate .mat-checkbox-background {
-  background-color: #03dac6; }
+  background-color: #00065e; }
 
 /* line 40, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
 .mat-checkbox.cdk-focused.mat-checkbox-checked .mat-checkbox-background {
-  background-color: #02998b; }
+  background-color: #000442; }
 
 /* line 43, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
 .mat-checkbox.cdk-focused .mat-checkbox-frame {
-  border-color: #02998b; }
+  border-color: #000442; }
 
 /* line 50, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
 .aac-checkbox-label {
@@ -468,7 +468,7 @@ input.ace-field-input.form-control::placeholder {
     content: "";
     width: 1rem;
     height: 1rem;
-    border: 1px solid #03dac6;
+    border: 1px solid #00065e;
     left: 0;
     top: 0;
     line-height: 1.5rem;
@@ -478,7 +478,7 @@ input.ace-field-input.form-control::placeholder {
     transform: translateY(0.25rem); }
   /* line 76, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
   .aac-checkbox-label.input-checked::before {
-    background-color: #03dac6; }
+    background-color: #00065e; }
   /* line 79, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
   .aac-checkbox-label.input-checked:after {
     position: absolute;
@@ -494,27 +494,27 @@ input.ace-field-input.form-control::placeholder {
     top: 0.55rem; }
   /* line 93, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
   .aac-checkbox-label:focus-within:before {
-    border-color: #02998b; }
+    border-color: #000442; }
   /* line 97, node_modules/ace-lib-theme/assets/scss/_checkbox.scss */
   .aac-checkbox-label:focus-within.input-checked:before {
-    background-color: #02998b; }
+    background-color: #000442; }
 
 /* line 5, node_modules/ace-lib-theme/assets/scss/_radio-button.scss */
 .mat-radio-button .mat-radio-label .mat-radio-container .mat-radio-outer-circle {
   border-width: 1px;
-  border-color: #03dac6; }
+  border-color: #00065e; }
 
 /* line 9, node_modules/ace-lib-theme/assets/scss/_radio-button.scss */
 .mat-radio-button .mat-radio-label .mat-radio-container .mat-radio-inner-circle {
-  background-color: #03dac6; }
+  background-color: #00065e; }
 
 /* line 18, node_modules/ace-lib-theme/assets/scss/_radio-button.scss */
 .mat-radio-button.cdk-focused .mat-radio-label .mat-radio-container .mat-radio-outer-circle {
-  border-color: #02998b; }
+  border-color: #000442; }
 
 /* line 21, node_modules/ace-lib-theme/assets/scss/_radio-button.scss */
 .mat-radio-button.cdk-focused .mat-radio-label .mat-radio-container .mat-radio-inner-circle {
-  background-color: #02998b; }
+  background-color: #000442; }
 
 /* line 31, node_modules/ace-lib-theme/assets/scss/_radio-button.scss */
 .aac-radio-label {
@@ -533,7 +533,7 @@ input.ace-field-input.form-control::placeholder {
     content: "";
     width: 1rem;
     height: 1rem;
-    border: 1px solid #03dac6;
+    border: 1px solid #00065e;
     border-radius: 50%;
     left: 0;
     top: 0;
@@ -547,7 +547,7 @@ input.ace-field-input.form-control::placeholder {
     content: "";
     width: 0.5rem;
     height: 0.5rem;
-    background: #03dac6 none;
+    background: #00065e none;
     top: 0.25rem;
     border-radius: 50%;
     left: 0.25rem;
@@ -557,10 +557,10 @@ input.ace-field-input.form-control::placeholder {
     transform: translateY(0.25rem); }
   /* line 72, node_modules/ace-lib-theme/assets/scss/_radio-button.scss */
   .aac-radio-label:focus-within:before {
-    border-color: #02998b; }
+    border-color: #000442; }
   /* line 75, node_modules/ace-lib-theme/assets/scss/_radio-button.scss */
   .aac-radio-label:focus-within:after {
-    background-color: #02998b; }
+    background-color: #000442; }
 
 /* line 1, node_modules/ace-lib-theme/assets/scss/_buttons.scss */
 .ace-btn {
@@ -569,7 +569,7 @@ input.ace-field-input.form-control::placeholder {
   color: #212529;
   border: 1px solid transparent;
   vertical-align: middle;
-  padding: 0.5rem 0.75rem;
+  padding: 10px 20px;
   border-radius: 0;
   line-height: 1.5; }
   /* line 13, node_modules/ace-lib-theme/assets/scss/mixins/_hover.scss */
@@ -1340,3 +1340,7 @@ header {
 .mat-step-icon {
   background-color: #00065e;
   color: #FFFFFF; }
+
+/* line 13, src/assets/theme/addon-styles.scss */
+.button-separator-space {
+  margin-right: 10px; }
