@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,18 +8,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoanApplicationComponent implements OnInit {
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  @ViewChild('loanApplicationFormRef') loanApplicationFormRef: ElementRef;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+
+  }
+
+  loanApplicationFormOnloadHandler(eventData) {
+     this.hideRecordFormHeader(this.loanApplicationFormRef);
+  }
+
+  /**
+   * Hide the default tabs from ace-record-form
+   * @param formRef 
+   * @param hideHeaderTabs 
+   */
+  private hideRecordFormHeader(formRef: ElementRef, hideHeaderTabs = true) {
+    const headerDomElement = formRef.nativeElement.querySelector('mat-tab-header');
+    headerDomElement.style.display = hideHeaderTabs ? 'none' : "inherit";
   }
 
 }
