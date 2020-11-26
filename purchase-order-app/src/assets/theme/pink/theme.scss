@@ -1,0 +1,22 @@
+
+$theme-colors: (
+  "primary": #ee0083,
+  "secondary": #4c42db,
+  "error": #b00020,
+  "light": #FFFFFF,
+  "dark": #343a40,
+  "gray": #f8f8f8
+  );
+  //import font
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;800;900&display=swap');
+  
+  //set the base font family
+  $font-family-base: 'Raleway', sans-serif;
+
+  //ace-lib button styles
+  $ace-lib-btn-padding : 10px 20px;
+
+
+
+@import "node_modules/ace-lib-theme/assets/scss/theme.scss";
+@import "./addon-styles.scss";
