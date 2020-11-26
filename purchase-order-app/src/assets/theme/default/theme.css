@@ -1351,7 +1351,7 @@ header {
 .button-separator-space {
   margin-right: 10px; }
 
-/* line 27, src/assets/theme/default/_addon-styles.scss */
+/* line 25, src/assets/theme/default/_addon-styles.scss */
 html body .page-container {
   background-image: url(./img/page-bg.jpg);
   background-color: transparent;
@@ -1359,3 +1359,7 @@ html body .page-container {
   background-attachment: fixed;
   background-size: cover;
   height: 100%; }
+  /* line 33, src/assets/theme/default/_addon-styles.scss */
+  html body .page-container .preview-loan-info,
+  html body .page-container .preview-applicant-info {
+    border: 1px solid #03dac6; }

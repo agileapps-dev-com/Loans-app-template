@@ -1393,3 +1393,7 @@ html body {
       /* line 71, src/assets/theme/pink-blue-gray/_addon-styles.scss */
       html body .page-container .page-content mat-horizontal-stepper .mat-horizontal-content-container {
         padding: 0; }
+      /* line 75, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+      html body .page-container .page-content .preview-loan-info,
+      html body .page-container .page-content .preview-applicant-info {
+        border: 1px solid #607d8b; }

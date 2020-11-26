@@ -1,7 +1,6 @@
 $theme-primary-color: map-get($theme-colors, "primary");
 $theme-secondary-color: map-get($theme-colors, "secondary");
 
-
 header {
 	border-bottom: 5px solid map-get($theme-colors, "dark");
 	background-color: map-get($theme-colors, "light");
@@ -18,14 +17,12 @@ header {
 	// box-shadow: 0 1px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	background-color: map-get($theme-colors, "light");
-	
 }
 
 //utility classes
 .button-separator-space {
 	margin-right: 10px;
 }
-
 
 body {
 	.page-container {
@@ -45,7 +42,6 @@ body {
 			background: linear-gradient(332deg, $theme-secondary-color 0%, $theme-primary-color 100%);
 			top: 60px;
 			height: 2px;
-
 		}
 		&::after {
 			position: absolute;
@@ -72,6 +68,10 @@ body {
 
 			mat-horizontal-stepper .mat-horizontal-content-container {
 				padding: 0;
+			}
+			.preview-loan-info,
+			.preview-applicant-info {
+				border: 1px solid map-get($theme-colors, "secondary");
 			}
 		}
 	}

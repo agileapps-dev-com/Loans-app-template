@@ -1332,26 +1332,26 @@ ace-user-profile .user-info-text-block .user-role {
   font-weight: lighter;
   text-transform: uppercase; }
 
-/* line 5, src/assets/theme/pink/_addon-styles.scss */
+/* line 4, src/assets/theme/pink/_addon-styles.scss */
 header {
   border-bottom: 5px solid #343a40;
   background-color: #FFFFFF; }
 
-/* line 11, src/assets/theme/pink/_addon-styles.scss */
+/* line 10, src/assets/theme/pink/_addon-styles.scss */
 .mat-step-icon {
   background-color: #ee0083;
   color: #FFFFFF; }
 
-/* line 17, src/assets/theme/pink/_addon-styles.scss */
+/* line 16, src/assets/theme/pink/_addon-styles.scss */
 .form-card {
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: #FFFFFF; }
 
-/* line 25, src/assets/theme/pink/_addon-styles.scss */
+/* line 23, src/assets/theme/pink/_addon-styles.scss */
 .button-separator-space {
   margin-right: 10px; }
 
-/* line 31, src/assets/theme/pink/_addon-styles.scss */
+/* line 28, src/assets/theme/pink/_addon-styles.scss */
 body .page-container {
   background-image: none;
   position: relative;
@@ -1359,7 +1359,7 @@ body .page-container {
   background-position: 0 222px;
   height: auto;
   overflow: hidden; }
-  /* line 39, src/assets/theme/pink/_addon-styles.scss */
+  /* line 36, src/assets/theme/pink/_addon-styles.scss */
   body .page-container::before {
     position: absolute;
     content: " ";
@@ -1369,7 +1369,7 @@ body .page-container {
     background: linear-gradient(332deg, #4c42db 0%, #ee0083 100%);
     top: 60px;
     height: 2px; }
-  /* line 50, src/assets/theme/pink/_addon-styles.scss */
+  /* line 46, src/assets/theme/pink/_addon-styles.scss */
   body .page-container::after {
     position: absolute;
     content: " ";
@@ -1383,14 +1383,18 @@ body .page-container {
     width: 200%;
     left: -4%;
     bottom: -8%; }
-  /* line 64, src/assets/theme/pink/_addon-styles.scss */
+  /* line 60, src/assets/theme/pink/_addon-styles.scss */
   body .page-container .page-content {
     position: relative;
     z-index: 1; }
-    /* line 68, src/assets/theme/pink/_addon-styles.scss */
+    /* line 64, src/assets/theme/pink/_addon-styles.scss */
     body .page-container .page-content .instructions-class .disclaimer-text {
       margin-top: 150px;
       color: #FFFFFF; }
-    /* line 73, src/assets/theme/pink/_addon-styles.scss */
+    /* line 69, src/assets/theme/pink/_addon-styles.scss */
     body .page-container .page-content mat-horizontal-stepper .mat-horizontal-content-container {
       padding: 0; }
+    /* line 72, src/assets/theme/pink/_addon-styles.scss */
+    body .page-container .page-content .preview-loan-info,
+    body .page-container .page-content .preview-applicant-info {
+      border: 1px solid #4c42db; }

@@ -22,8 +22,6 @@ header {
 }
 
 html body {
-	
-	
 	.page-container {
 		background-image: url(./img/page-bg.jpg);
 		background-color: transparent;
@@ -31,5 +29,10 @@ html body {
 		background-attachment: fixed;
 		background-size: cover;
 		height: 100%;
+
+		.preview-loan-info,
+		.preview-applicant-info {
+			border: 1px solid map-get($theme-colors, "secondary");
+		}
 	}
 }
