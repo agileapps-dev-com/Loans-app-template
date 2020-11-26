@@ -1332,24 +1332,64 @@ ace-user-profile .user-info-text-block .user-role {
   font-weight: lighter;
   text-transform: uppercase; }
 
-/* line 1, src/assets/theme/pink/_addon-styles.scss */
+/* line 5, src/assets/theme/pink/_addon-styles.scss */
 header {
   border-bottom: 5px solid #343a40;
   background-color: #FFFFFF; }
 
-/* line 8, src/assets/theme/pink/_addon-styles.scss */
+/* line 11, src/assets/theme/pink/_addon-styles.scss */
 .mat-step-icon {
   background-color: #ee0083;
   color: #FFFFFF; }
 
-/* line 14, src/assets/theme/pink/_addon-styles.scss */
+/* line 17, src/assets/theme/pink/_addon-styles.scss */
 .form-card {
   border: 1px solid rgba(0, 0, 0, 0.2); }
 
-/* line 20, src/assets/theme/pink/_addon-styles.scss */
+/* line 24, src/assets/theme/pink/_addon-styles.scss */
 .button-separator-space {
   margin-right: 10px; }
 
-/* line 25, src/assets/theme/pink/_addon-styles.scss */
+/* line 30, src/assets/theme/pink/_addon-styles.scss */
 body .page-container {
-  background-image: url(./img/bg.png); }
+  background-image: none;
+  position: relative;
+  background-size: cover;
+  background-position: 0 222px;
+  height: auto;
+  overflow: hidden; }
+  /* line 38, src/assets/theme/pink/_addon-styles.scss */
+  body .page-container::before {
+    position: absolute;
+    content: " ";
+    left: 0;
+    right: 0;
+    background: #4c42db;
+    background: linear-gradient(332deg, #4c42db 0%, #ee0083 100%);
+    top: 60px;
+    height: 2px; }
+  /* line 49, src/assets/theme/pink/_addon-styles.scss */
+  body .page-container::after {
+    position: absolute;
+    content: " ";
+    left: 0;
+    right: 0;
+    background: #4c42db;
+    background: linear-gradient(332deg, #4c42db 0%, #ee0083 100%);
+    /* top: 0; */
+    height: 500px;
+    transform: rotate(350deg);
+    width: 200%;
+    left: -4%;
+    bottom: -8%; }
+  /* line 63, src/assets/theme/pink/_addon-styles.scss */
+  body .page-container .page-content {
+    position: relative;
+    z-index: 1; }
+    /* line 67, src/assets/theme/pink/_addon-styles.scss */
+    body .page-container .page-content .instructions-class .disclaimer-text {
+      margin-top: 150px;
+      color: #FFFFFF; }
+    /* line 72, src/assets/theme/pink/_addon-styles.scss */
+    body .page-container .page-content mat-horizontal-stepper .mat-horizontal-content-container {
+      padding: 0; }

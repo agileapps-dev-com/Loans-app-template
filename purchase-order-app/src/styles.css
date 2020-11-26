@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&display=swap');
+
+.text-font-passion-one{
+    font-family: 'Passion One', cursive;
+}
+
 .page-container{
     background-color: transparent ;
     background-image: url(assets/images/page-bg.jpg);

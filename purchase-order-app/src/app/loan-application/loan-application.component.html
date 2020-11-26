@@ -1,107 +1,122 @@
 <div class="page-container container-fluid">
 
+    <div class="page-content">
 
-    <div class="row">
-        <div class="col ">
-            <div class="header-logo ">
-                <img src="assets/images/logo.png" height="80" alt="">
+
+        <div class="row">
+            <div class="col ">
+                <div class="header-logo ">
+                    <h2 class="text-font-passion-one ">
+                        <span class="ace-text-secondary">[</span>
+                        <span class="ace-text-primary">
+                            Q</span>
+                            <span class="ace-text-secondary"> ]</span>
+                        <span class="ace-text-secondary">
+                        Loans
+                        </span>    
+                    </h2>
+                </div>
+
             </div>
-
         </div>
-    </div>
-    <div class="row">
-        <!-- <div class="col"></div> -->
-        <div class="col-6">
-            <div class="instructions-class">
+        <div class="row">
+            <!-- <div class="col"></div> -->
+            <div class="col-6">
+                <div class="instructions-class">
 
-                <h2 class="ace-text-primary"> Application Instructions</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel iaculis dolor, ut luctus nibh. Sed
-                    blandit
-                    ante a orci rhoncus dapibus eget id tortor. Interdum et malesuada fames ac ante ipsum primis in
-                    faucibus.</p>
+                    <h2 class="ace-text-primary"> Application Instructions</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel iaculis dolor, ut luctus nibh.
+                        Sed
+                        blandit
+                        ante a orci rhoncus dapibus eget id tortor. Interdum et malesuada fames ac ante ipsum primis in
+                        faucibus.</p>
                     <p>Nunc eu nibh pulvinar, fringilla leo at, semper elit. Interdum et malesuada fames ac ante ipsum
-                    primis in
-                    faucibus. Phasellus vol</p>
-                <h3>Etiam ac eros non turpis.</h3>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                    <li>In tempor sem et lacus auctor cursus.</li>
-                    <li>Curabitur maximus turpis eu egestas aliquet.</li>
-                    <li>Aliquam sit amet risus in risus pharetra condimentum nec quis urna.</li>
-                    <!-- <li>Suspendisse posuere tellus eget lacus vehicula sagittis.</li>
+                        primis in
+                        faucibus. Phasellus vol</p>
+                    <h3>Etiam ac eros non turpis.</h3>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li>In tempor sem et lacus auctor cursus.</li>
+                        <li>Curabitur maximus turpis eu egestas aliquet.</li>
+                        <li>Aliquam sit amet risus in risus pharetra condimentum nec quis urna.</li>
+                        <!-- <li>Suspendisse posuere tellus eget lacus vehicula sagittis.</li>
                     <li>Aenean molestie quam a ligula viverra, non auctor libero malesuada.</li> -->
-                    <li>Etiam nec neque sed mauris hendrerit dictum.</li>
-                    <li>Duis at est in felis rutrum luctus.</li>
-                </ul>
-                <p class="disclaimer-text">
-                    * In pretium pellentesque aliquam. Pellentesque nunc arcu, tincidunt vel arcu ultrices, venenatis suscipit enim. Aenean placerat purus et augue tempus, ac sagittis nisi commodo. Duis porta mauris sit amet enim vestibulum consequat. 
-                </p>
+                        <li>Etiam nec neque sed mauris hendrerit dictum.</li>
+                        <li>Duis at est in felis rutrum luctus.</li>
+                    </ul>
+                    <p class="disclaimer-text">
+                        * In pretium pellentesque aliquam. Pellentesque nunc arcu, tincidunt vel arcu ultrices,
+                        venenatis suscipit enim. Aenean placerat purus et augue tempus, ac sagittis nisi commodo. Duis
+                        porta mauris sit amet enim vestibulum consequat.
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="form-card ace-bg-light">
+
+                    <mat-horizontal-stepper #loanApplicationStepper>
+                        <mat-step label="Loan Information">
+                            <div class="step-content">
+
+                                <ace-record-form object-id="e0df6383df034137889ff583fedd9cc6" record-id="-1"
+                                    layout-id="c2cc1ca4e8154341ba36aa3fa42f3770" id="loanInformationForm"
+                                    #loanInformationFormRef css-classlist="border-0 p-0"
+                                    (load)="loanInformationFormOnloadHandler($event)"></ace-record-form>
+                            </div>
+
+                            <div class="step-actions-below">
+                                <!-- <button mat-button matStepperPrevious>Back</button> -->
+                                <button matStepperNext class="ace-btn ace-primary">Add applicant information</button>
+                            </div>
+
+                        </mat-step>
+                        <mat-step label="Applicant Information">
+                            <div class="step-content">
+
+                                <ace-record-form object-id="0fe671eb58034f8b9508be2f74c054d8" record-id="-1"
+                                    layout-id="bb87298d84514d6c8fcd739492ed24c0" id="ApplicantInfoForm"
+                                    id="applicantInfoForm" #applicantInfoFormRef
+                                    (load)="applicantInformationFormOnloadHandler($event)" css-classlist="border-0 p-0">
+                                </ace-record-form>
+                            </div>
+
+                            <div class="step-actions-below">
+                                <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
+                                    loan
+                                    information</button>
+                                <button class="ace-btn ace-primary" matStepperNext>Add Documents</button>
+                            </div>
+
+                        </mat-step>
+                        <mat-step label="Documents">
+                            <div class="step-content">
+                                Docs
+                            </div>
+
+                            <div class="step-actions-below">
+                                <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
+                                    applicant information</button>
+                                <button class="ace-btn ace-primary" matStepperNext>Preview & Submit</button>
+                            </div>
+                        </mat-step>
+                        <mat-step label="Preview & Submit">
+                            <div class="step-content">
+                                Preview
+                            </div>
+
+                            <div class="step-actions-below">
+                                <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
+                                    documents</button>
+                                <button class="ace-btn ace-primary">Submit</button>
+                            </div>
+                        </mat-step>
+
+                    </mat-horizontal-stepper>
+                </div>
+
             </div>
 
         </div>
-        <div class="col-6">
-            <div class="form-card ace-bg-light">
-
-                <mat-horizontal-stepper #loanApplicationStepper>
-                    <mat-step label="Loan Information">
-                        <div class="step-content">
-
-                            <ace-record-form object-id="e0df6383df034137889ff583fedd9cc6" record-id="-1"
-                                layout-id="c2cc1ca4e8154341ba36aa3fa42f3770" id="loanInformationForm"
-                                #loanInformationFormRef css-classlist="border-0 p-0"
-                                (load)="loanInformationFormOnloadHandler($event)"></ace-record-form>
-                        </div>
-
-                        <div class="step-actions-below">
-                            <!-- <button mat-button matStepperPrevious>Back</button> -->
-                            <button matStepperNext class="ace-btn ace-primary">Add applicant information</button>
-                        </div>
-
-                    </mat-step>
-                    <mat-step label="Applicant Information">
-                        <div class="step-content">
-
-                            <ace-record-form object-id="0fe671eb58034f8b9508be2f74c054d8" record-id="-1"
-                                layout-id="bb87298d84514d6c8fcd739492ed24c0" id="ApplicantInfoForm" id="applicantInfoForm"
-                                #applicantInfoFormRef (load)="applicantInformationFormOnloadHandler($event)"
-                                css-classlist="border-0 p-0"></ace-record-form>
-                        </div>
-
-                        <div class="step-actions-below">
-                            <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit loan
-                                information</button>
-                            <button class="ace-btn ace-primary" matStepperNext>Add Documents</button>
-                        </div>
-
-                    </mat-step>
-                    <mat-step label="Documents">
-                        <div class="step-content">
-                            Docs
-                        </div>
-
-                        <div class="step-actions-below">
-                            <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
-                                applicant information</button>
-                            <button class="ace-btn ace-primary" matStepperNext>Preview & Submit</button>
-                        </div>
-                    </mat-step>
-                    <mat-step label="Preview & Submit">
-                        <div class="step-content">
-                            Preview
-                        </div>
-
-                        <div class="step-actions-below">
-                            <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
-                                documents</button>
-                            <button class="ace-btn ace-primary">Submit</button>
-                        </div>
-                    </mat-step>
-                   
-                </mat-horizontal-stepper>
-            </div>
-
-        </div>
-
     </div>
-    
 </div>
