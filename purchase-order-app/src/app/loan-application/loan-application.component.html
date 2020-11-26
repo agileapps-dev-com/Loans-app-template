@@ -10,10 +10,10 @@
                         <span class="ace-text-secondary">[</span>
                         <span class="ace-text-primary">
                             Q</span>
-                            <span class="ace-text-secondary"> ]</span>
+                        <span class="ace-text-secondary"> ]</span>
                         <span class="ace-text-secondary">
-                        Loans
-                        </span>    
+                            Loans
+                        </span>
                     </h2>
                 </div>
 
@@ -55,7 +55,7 @@
             <div class="col-6">
                 <div class="form-card">
 
-                    <mat-horizontal-stepper #loanApplicationStepper>
+                    <mat-horizontal-stepper #loanApplicationStepper (selectionChange)="stepSelectionChange($event)">
                         <mat-step label="Loan Info">
                             <div class="step-content">
 
@@ -85,14 +85,32 @@
                                 <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
                                     loan
                                     info</button>
-                                    <button class="ace-btn ace-primary" matStepperNext>Preview & Submit</button>
+                                <button class="ace-btn ace-primary" matStepperNext>Preview</button>
                             </div>
 
                         </mat-step>
-                        
-                        <mat-step label="Preview & Submit">
+
+                        <mat-step label="Preview & Submit" [completed]="true">
                             <div class="step-content">
-                                Preview
+                                <ng-container *ngIf="shouldPreview">
+
+                                    <div class="preview-loan-info">
+                                        <h4 class="ace-text-primary">Loan Info</h4>
+                                        <ace-record-form object-id="e0df6383df034137889ff583fedd9cc6" record-id="-1"
+                                            layout-id="c2cc1ca4e8154341ba36aa3fa42f3770" id="preLoanInformationForm"
+                                            #preLoanInformationFormRef css-classlist="border-0 p-0" is-readonly="true"
+                                            (load)="preLoanInformationFormOnloadHandler($event)"></ace-record-form>
+                                    </div>
+                                    <div class="preview-applicant-info">
+                                        <h4 class="ace-text-primary">Applicant(s) Info</h4>
+                                        <ace-record-form object-id="0fe671eb58034f8b9508be2f74c054d8" record-id="-1"
+                                            layout-id="bb87298d84514d6c8fcd739492ed24c0" id="ApplicantInfoForm"
+                                            id="preApplicantInfoForm" #preApplicantInfoFormRef is-readonly="true"
+                                            (load)="preApplicantInformationFormOnloadHandler($event)"
+                                            css-classlist="border-0 p-0">
+                                        </ace-record-form>
+                                    </div>
+                                </ng-container>
                             </div>
 
                             <div class="step-actions-below">

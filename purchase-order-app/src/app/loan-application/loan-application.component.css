@@ -33,3 +33,8 @@ font-style: italic;
     text-align: center;
     padding: 20px;
 }
+
+.preview-loan-info,.preview-applicant-info{
+    margin-bottom: 20px;
+    padding: 20px;
+}
