@@ -2,10 +2,6 @@ $theme-primary-color: map-get($theme-colors, "primary");
 $theme-secondary-color: map-get($theme-colors, "secondary");
 
 
-header {
-	border-bottom: 5px solid map-get($theme-colors, "dark");
-	background-color: map-get($theme-colors, "light");
-}
 
 //stepper settings
 .mat-step-icon {
@@ -16,8 +12,8 @@ header {
 // loan card
 .form-card {
 	// box-shadow: 0 1px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	background-color: map-get($theme-colors, "light");
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: map-get($theme-colors, "dark");
 	
 }
 
@@ -27,7 +23,9 @@ header {
 }
 
 
-body {
+html body {
+	background-color: map-get($theme-colors, "dark");
+	color: map-get($theme-colors, "light");
 	.page-container {
 		// background-image: url(./img/bg.png) ;
 		background-image: none;

@@ -1337,15 +1337,25 @@ header {
   border-bottom: 5px solid #343a40;
   background-color: #FFFFFF; }
 
-/* line 8, src/assets/theme/default/_addon-styles.scss */
+/* line 7, src/assets/theme/default/_addon-styles.scss */
 .mat-step-icon {
   background-color: #00065e;
   color: #FFFFFF; }
 
-/* line 14, src/assets/theme/default/_addon-styles.scss */
+/* line 13, src/assets/theme/default/_addon-styles.scss */
 .form-card {
-  border: 1px solid rgba(0, 0, 0, 0.2); }
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF; }
 
 /* line 20, src/assets/theme/default/_addon-styles.scss */
 .button-separator-space {
   margin-right: 10px; }
+
+/* line 27, src/assets/theme/default/_addon-styles.scss */
+html body .page-container {
+  background-image: url(./img/page-bg.jpg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%; }
