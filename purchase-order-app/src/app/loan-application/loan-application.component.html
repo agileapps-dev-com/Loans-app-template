@@ -55,8 +55,8 @@
             <div class="col-6">
                 <div class="form-card">
 
-                    <mat-horizontal-stepper #loanApplicationStepper (selectionChange)="stepSelectionChange($event)">
-                        <mat-step label="Loan Info">
+                    <mat-horizontal-stepper #loanApplicationStepper (selectionChange)="stepSelectionChange($event)" [linear]="isLinear">
+                        <mat-step label="Loan Info" [stepControl]="loanInfoFormGroup">
                             <div class="step-content">
 
                                 <ace-record-form object-id="e0df6383df034137889ff583fedd9cc6" record-id="-1"
@@ -67,11 +67,11 @@
 
                             <div class="step-actions-below">
                                 <!-- <button mat-button matStepperPrevious>Back</button> -->
-                                <button matStepperNext class="ace-btn ace-primary">Add applicant info</button>
+                                <button matStepperNext class="ace-btn ace-primary" (click)="validateLoanInfoFormAndNavigate()">Add applicant info</button>
                             </div>
 
                         </mat-step>
-                        <mat-step label="Applicant Info">
+                        <mat-step label="Applicant Info" [stepControl]="applicantInfoFormGroup">
                             <div class="step-content">
 
                                 <ace-record-form object-id="0fe671eb58034f8b9508be2f74c054d8" record-id="-1"
@@ -85,7 +85,7 @@
                                 <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
                                     loan
                                     info</button>
-                                <button class="ace-btn ace-primary" matStepperNext>Preview</button>
+                                <button class="ace-btn ace-primary" matStepperNext (click)="validateApplicantInfoFormAndNavigate()">Preview</button>
                             </div>
 
                         </mat-step>
