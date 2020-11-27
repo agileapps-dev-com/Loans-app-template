@@ -55,19 +55,22 @@
             <div class="col-6">
                 <div class="form-card">
 
-                    <mat-horizontal-stepper #loanApplicationStepper (selectionChange)="stepSelectionChange($event)" [linear]="isLinear">
+                    <mat-horizontal-stepper #loanApplicationStepper (selectionChange)="stepSelectionChange($event)"
+                        [linear]="isLinear">
                         <mat-step label="Loan Info" [stepControl]="loanInfoFormGroup">
                             <div class="step-content">
 
                                 <ace-record-form object-id="e0df6383df034137889ff583fedd9cc6" record-id="-1"
                                     layout-id="c2cc1ca4e8154341ba36aa3fa42f3770" id="loanInformationForm"
                                     #loanInformationFormRef css-classlist="border-0 p-0"
-                                    (load)="loanInformationFormOnloadHandler($event)" (save)="loanInfoFormSaveHandler($event)"></ace-record-form>
+                                    (load)="loanInformationFormOnloadHandler($event)"
+                                    (save)="loanInfoFormSaveHandler($event)"></ace-record-form>
                             </div>
 
                             <div class="step-actions-below">
                                 <!-- <button mat-button matStepperPrevious>Back</button> -->
-                                <button matStepperNext class="ace-btn ace-primary" (click)="validateLoanInfoFormAndNavigate()">Add applicant info</button>
+                                <button matStepperNext class="ace-btn ace-primary"
+                                    (click)="validateLoanInfoFormAndNavigate()">Add applicant info</button>
                             </div>
 
                         </mat-step>
@@ -77,7 +80,8 @@
                                 <ace-record-form object-id="0fe671eb58034f8b9508be2f74c054d8" record-id="-1"
                                     layout-id="bb87298d84514d6c8fcd739492ed24c0" id="ApplicantInfoForm"
                                     id="applicantInfoForm" #applicantInfoFormRef
-                                    (load)="applicantInformationFormOnloadHandler($event)" (save)="applciantInfoFormSaveHandler($event)" css-classlist="border-0 p-0">
+                                    (load)="applicantInformationFormOnloadHandler($event)"
+                                    (save)="applciantInfoFormSaveHandler($event)" css-classlist="border-0 p-0">
                                 </ace-record-form>
                             </div>
 
@@ -85,32 +89,45 @@
                                 <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
                                     loan
                                     info</button>
-                                <button class="ace-btn ace-primary" matStepperNext (click)="validateApplicantInfoFormAndNavigate()">Preview</button>
+                                <button class="ace-btn ace-primary" matStepperNext
+                                    (click)="validateApplicantInfoFormAndNavigate()">Preview</button>
                             </div>
 
                         </mat-step>
 
                         <mat-step label="Preview & Submit" [completed]="true">
                             <div class="step-content">
-                                <ng-container *ngIf="shouldPreview">
+                                <ng-container *ngIf="showSuccessfullMessage; else showMainContent">
+                                    <div class="success-message-container ace-text-secondary">
 
-                                    <div class="preview-loan-info">
-                                        <h4 class="ace-text-primary">Loan Info</h4>
-                                        <ace-record-form object-id="e0df6383df034137889ff583fedd9cc6" record-id="-1"
-                                            layout-id="c2cc1ca4e8154341ba36aa3fa42f3770" id="preLoanInformationForm"
-                                            #preLoanInformationFormRef css-classlist="border-0 p-0" is-readonly="true"
-                                            (load)="preLoanInformationFormOnloadHandler($event)"></ace-record-form>
+                                        <h4 class="ace-text-primary">Successfully applied</h4>
+                                        <p>You will receive an email confirmation</p>
+                                        <button class="ace-btn ace-primary">Ok</button>
                                     </div>
-                                    <div class="preview-applicant-info">
-                                        <h4 class="ace-text-primary">Applicant(s) Info</h4>
-                                        <ace-record-form object-id="0fe671eb58034f8b9508be2f74c054d8" record-id="-1"
-                                            layout-id="bb87298d84514d6c8fcd739492ed24c0" id="ApplicantInfoForm"
-                                            id="preApplicantInfoForm" #preApplicantInfoFormRef is-readonly="true"
-                                            (load)="preApplicantInformationFormOnloadHandler($event)"
-                                            css-classlist="border-0 p-0">
-                                        </ace-record-form>
-                                    </div>
+
                                 </ng-container>
+                                <ng-template #showMainContent>
+                                    <ng-container *ngIf="shouldPreview">
+
+                                        <div class="preview-loan-info">
+                                            <h4 class="ace-text-primary">Loan Info</h4>
+                                            <ace-record-form object-id="e0df6383df034137889ff583fedd9cc6" record-id="-1"
+                                                layout-id="c2cc1ca4e8154341ba36aa3fa42f3770" id="preLoanInformationForm"
+                                                #preLoanInformationFormRef css-classlist="border-0 p-0"
+                                                is-readonly="true" (load)="preLoanInformationFormOnloadHandler($event)">
+                                            </ace-record-form>
+                                        </div>
+                                        <div class="preview-applicant-info">
+                                            <h4 class="ace-text-primary">Applicant(s) Info</h4>
+                                            <ace-record-form object-id="0fe671eb58034f8b9508be2f74c054d8" record-id="-1"
+                                                layout-id="bb87298d84514d6c8fcd739492ed24c0" id="ApplicantInfoForm"
+                                                id="preApplicantInfoForm" #preApplicantInfoFormRef is-readonly="true"
+                                                (load)="preApplicantInformationFormOnloadHandler($event)"
+                                                css-classlist="border-0 p-0">
+                                            </ace-record-form>
+                                        </div>
+                                    </ng-container>
+                                </ng-template>
                             </div>
 
                             <div class="step-actions-below">

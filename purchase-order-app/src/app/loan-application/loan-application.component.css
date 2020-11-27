@@ -38,3 +38,7 @@ font-style: italic;
     margin-bottom: 20px;
     padding: 20px;
 }
+
+.success-message-container{
+    padding: 20px;
+}
