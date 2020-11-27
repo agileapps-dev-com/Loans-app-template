@@ -1,7 +1,9 @@
 import { StepperSelectionEvent } from '@angular/cdk/stepper';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
+import { DOCUMENT } from '@angular/common';
+
 
 @Component({
   selector: 'app-loan-application',
@@ -12,6 +14,7 @@ export class LoanApplicationComponent implements OnInit {
   isLinear = true;
   shouldPreview = false;
   showSuccessfullMessage = false;
+  isSavingInProgress = false;
   loanInfoFormGroup: FormGroup;
   applicantInfoFormGroup: FormGroup;
 
@@ -22,7 +25,7 @@ export class LoanApplicationComponent implements OnInit {
   @ViewChild('preApplicantInfoFormRef') preApplicantInfoFormRef: ElementRef;
   @ViewChild('loanApplicationStepper') loanApplicationStepper: MatStepper;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.resetStepFormCtrls();
@@ -50,14 +53,14 @@ export class LoanApplicationComponent implements OnInit {
 
   stepSelectionChange(stepChange: StepperSelectionEvent) {
     this.shouldPreview = stepChange.selectedStep.label === "Preview & Submit";
-    
-    
+
+
     switch (stepChange.selectedStep.label) {
       case "Loan Info":
 
         break;
       case "Preview & Submit":
-        this.showSuccessfullMessage = false;    
+        this.showSuccessfullMessage = false;
         break;
 
       default:
@@ -78,6 +81,7 @@ export class LoanApplicationComponent implements OnInit {
     }
   }
   submitApplication() {
+    this.isSavingInProgress = true;
     // #step 1: save loan info form. 
     this.saveLoanInfoForm();
 
@@ -87,7 +91,7 @@ export class LoanApplicationComponent implements OnInit {
   loanInfoFormSaveHandler(eventData) {
     const onSaveData = eventData['detail'];
     let loanRecordData = null;
-    console.log(onSaveData)
+    this.isSavingInProgress = false;
     // if success, proceed to set the link lookup save the applicant information
     if (onSaveData['status'] === "success") {
       loanRecordData = onSaveData['data']['record'];
@@ -96,12 +100,31 @@ export class LoanApplicationComponent implements OnInit {
   }
   applciantInfoFormSaveHandler(eventData) {
     const onSaveData = eventData['detail'];
+    this.isSavingInProgress = false;
     if (onSaveData['status'] === "success") {
       this.showSuccessfullMessage = true;
       this.resetAllStepsGoToLoanInfo();
     } else {
       this.showSuccessfullMessage = false;
       this.focusStepApplicantInfo();
+    }
+  }
+
+  switchTheme(varient: string): void {
+    
+    const linHrefElem: HTMLLinkElement = this.document.head.querySelector('#theme-src');
+    
+    switch (varient) {
+      case "pink":
+        linHrefElem.href = 'assets/theme/pink/theme.css';
+        break;
+      case "default":
+        linHrefElem.href = 'assets/theme/default/theme.css';
+        break;
+
+      default:
+        linHrefElem.href = 'assets/theme/pink-blue-gray/theme.css';
+        break;
     }
   }
 
@@ -120,7 +143,7 @@ export class LoanApplicationComponent implements OnInit {
     const previewLoaninfoFormDomElement = this.preLoanInformationFormRef.nativeElement;
     const formData = loanInfoFormDomElement.getRecordData();
     previewLoaninfoFormDomElement.setRecordData(formData);
-    console.log(loanInfoFormDomElement, previewLoaninfoFormDomElement, formData);
+
 
   }
   private previewApplicantInfo() {
@@ -163,6 +186,7 @@ export class LoanApplicationComponent implements OnInit {
 
     if (applicantInfoForm.isValid()) {
       applicantInfoForm.saveRecord();
+      this.isSavingInProgress = true;
     } else {
       this.focusStepApplicantInfo();
     }

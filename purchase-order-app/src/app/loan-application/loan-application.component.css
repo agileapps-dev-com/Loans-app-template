@@ -1,44 +1,75 @@
-.header-logo{
+.header-logo {
     padding: 10px 40px;
 }
-.header-logo h2{
+.header-logo h2 {
     margin: 0;
 }
 
-.instructions-class{
-    padding:60px 40px 20px 40px
-    
+.instructions-class {
+    padding: 60px 40px 20px 40px;
 }
-.instructions-class .disclaimer-text{
-margin-top: 40px;
-font-size: 60%;
-font-style: italic;
+.instructions-class .disclaimer-text {
+    margin-top: 40px;
+    font-size: 60%;
+    font-style: italic;
 }
 
-.form-card{
+.form-card {
     padding: 20px 20px 0 20px;
     min-height: 450px;
     border-radius: 10px;
     margin: 20px 20px 20px 0;
-    
 }
 
-.step-content{
-    padding:0 40px 20px 40px;
+.step-content {
+    padding: 0 40px 20px 40px;
     height: 450px;
     overflow: auto;
     margin-bottom: 20px;
 }
-.step-actions-below{
+.step-actions-below {
     text-align: center;
     padding: 20px;
 }
 
-.preview-loan-info,.preview-applicant-info{
+.preview-loan-info,
+.preview-applicant-info {
     margin-bottom: 20px;
     padding: 20px;
 }
 
-.success-message-container{
+.success-message-container {
     padding: 20px;
+    text-align: center;
+}
+
+.spinner-element {
+    padding: 5px 0;
+}
+.spinner-element app-spinner {
+    display: inline-block;
+    padding: 0;
+    vertical-align: middle;
+}
+.page-footer {
+    position: relative;
+    z-index: 2;
+}
+.theme-switch-link{
+    padding: 2px 10px;
+    margin: 0 5px;
+    font-size: 1px;
+    background-color: rgba(133, 133, 133, 0.438);
+}
+.theme-switch-link-default{
+    background-color: #FFF;
+    border: 1px solid #00065e;
+}
+.theme-switch-link-pink{
+    background-color: #ee0083;
+    border: 1px solid #fff;
+}
+.theme-switch-link-pink-gray-blue{
+    background-color: #607d8b;
+    border: 1px solid #fff;
 }

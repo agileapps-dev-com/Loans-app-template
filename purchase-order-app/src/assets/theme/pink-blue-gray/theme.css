@@ -1332,25 +1332,25 @@ ace-user-profile .user-info-text-block .user-role {
   font-weight: lighter;
   text-transform: uppercase; }
 
-/* line 7, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+/* line 5, src/assets/theme/pink-blue-gray/_addon-styles.scss */
 .mat-step-icon {
   background-color: #e91e63;
   color: #FFFFFF; }
 
-/* line 13, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+/* line 11, src/assets/theme/pink-blue-gray/_addon-styles.scss */
 .form-card {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: #343a40; }
 
-/* line 21, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+/* line 18, src/assets/theme/pink-blue-gray/_addon-styles.scss */
 .button-separator-space {
   margin-right: 10px; }
 
-/* line 26, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+/* line 22, src/assets/theme/pink-blue-gray/_addon-styles.scss */
 html body {
   background-color: #343a40;
   color: #FFFFFF; }
-  /* line 29, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+  /* line 25, src/assets/theme/pink-blue-gray/_addon-styles.scss */
   html body .page-container {
     background-image: none;
     position: relative;
@@ -1358,7 +1358,7 @@ html body {
     background-position: 0 222px;
     height: auto;
     overflow: hidden; }
-    /* line 37, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+    /* line 33, src/assets/theme/pink-blue-gray/_addon-styles.scss */
     html body .page-container::before {
       position: absolute;
       content: " ";
@@ -1368,7 +1368,7 @@ html body {
       background: linear-gradient(332deg, #607d8b 0%, #e91e63 100%);
       top: 60px;
       height: 2px; }
-    /* line 48, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+    /* line 43, src/assets/theme/pink-blue-gray/_addon-styles.scss */
     html body .page-container::after {
       position: absolute;
       content: " ";
@@ -1382,18 +1382,25 @@ html body {
       width: 200%;
       left: -4%;
       bottom: -8%; }
-    /* line 62, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+    /* line 57, src/assets/theme/pink-blue-gray/_addon-styles.scss */
     html body .page-container .page-content {
       position: relative;
       z-index: 1; }
-      /* line 66, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+      /* line 61, src/assets/theme/pink-blue-gray/_addon-styles.scss */
       html body .page-container .page-content .instructions-class .disclaimer-text {
         margin-top: 150px;
         color: #FFFFFF; }
-      /* line 71, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+      /* line 66, src/assets/theme/pink-blue-gray/_addon-styles.scss */
       html body .page-container .page-content mat-horizontal-stepper .mat-horizontal-content-container {
         padding: 0; }
-      /* line 75, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+      /* line 70, src/assets/theme/pink-blue-gray/_addon-styles.scss */
       html body .page-container .page-content .preview-loan-info,
       html body .page-container .page-content .preview-applicant-info {
         border: 1px solid #607d8b; }
+  /* line 78, src/assets/theme/pink-blue-gray/_addon-styles.scss */
+  html body app-spinner .loader {
+    border: 4px solid #607d8b !important;
+    border-radius: 50%;
+    border-top: 4px solid #e91e63 !important;
+    width: 36px;
+    height: 36px; }

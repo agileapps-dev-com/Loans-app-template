@@ -1398,3 +1398,11 @@ body .page-container {
     body .page-container .page-content .preview-loan-info,
     body .page-container .page-content .preview-applicant-info {
       border: 1px solid #4c42db; }
+
+/* line 79, src/assets/theme/pink/_addon-styles.scss */
+body app-spinner .loader {
+  border: 4px solid #4c42db !important;
+  border-radius: 50%;
+  border-top: 4px solid #ee0083 !important;
+  width: 36px;
+  height: 36px; }

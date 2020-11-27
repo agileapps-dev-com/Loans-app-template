@@ -102,7 +102,7 @@
 
                                         <h4 class="ace-text-primary">Successfully applied</h4>
                                         <p>You will receive an email confirmation</p>
-                                        <button class="ace-btn ace-primary">Ok</button>
+                                        <!-- <button class="ace-btn ace-primary">Ok</button> -->
                                     </div>
 
                                 </ng-container>
@@ -130,10 +130,15 @@
                                 </ng-template>
                             </div>
 
-                            <div class="step-actions-below">
-                                <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious>Edit
+                            <div class="step-actions-below" *ngIf="!showSuccessfullMessage">
+                                <button class="ace-btn ace-secondary button-separator-space" matStepperPrevious
+                                    [disabled]="isSavingInProgress">Edit
                                     applicant info</button>
-                                <button class="ace-btn ace-primary" (click)="submitApplication()">Submit</button>
+                                <button class="ace-btn ace-primary button-separator-space" (click)="submitApplication()"
+                                    [disabled]="isSavingInProgress">Submit</button>
+                                <span *ngIf="isSavingInProgress" class="spinner-element">
+                                    <app-spinner></app-spinner>
+                                </span>
                             </div>
                         </mat-step>
 
@@ -143,5 +148,10 @@
             </div>
 
         </div>
+    </div>
+    <div class="page-footer">
+        <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-default" (click)="switchTheme('default')"></a>
+        <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-pink" (click)="switchTheme('pink')"></a>
+        <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-pink-gray-blue" (click)="switchTheme('')"></a>
     </div>
 </div>
