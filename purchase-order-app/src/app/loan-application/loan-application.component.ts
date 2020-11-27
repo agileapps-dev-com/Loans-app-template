@@ -24,13 +24,9 @@ export class LoanApplicationComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.loanInfoFormGroup = this._formBuilder.group({
-      loanInfCtrl: [false, Validators.requiredTrue]
-    });
-    this.applicantInfoFormGroup = this._formBuilder.group({
-      applicantInfCtrl: [false, Validators.requiredTrue]
-    });
+    this.resetStepFormCtrls();
   }
+
 
   loanInformationFormOnloadHandler(eventData) {
     this.hideRecordFormHeader(this.loanInformationFormRef);
@@ -55,9 +51,9 @@ export class LoanApplicationComponent implements OnInit {
     this.shouldPreview = stepChange.selectedStep.label === "Preview & Submit";
     switch (stepChange.selectedStep.label) {
       case "Loan Info":
-        
+
         break;
-    
+
       default:
         break;
     }
@@ -73,6 +69,31 @@ export class LoanApplicationComponent implements OnInit {
     const isValidForm = this.validateApplciantInfoForm();
     if (isValidForm) {
       this.loanApplicationStepper.next();
+    }
+  }
+  submitApplication() {
+    // #step 1: save loan info form. 
+    this.saveLoanInfoForm();
+
+    // #step 2: save applicant info form : implemented on (save) event on this.loanInformationFormRef
+    // #step 3: display message & reset both forms and go to Loan info step
+  }
+  loanInfoFormSaveHandler(eventData) {
+    const onSaveData = eventData['detail'];
+    let loanRecordData = null;
+    console.log(onSaveData)
+    // if success, proceed to set the link lookup save the applicant information
+    if (onSaveData['status'] === "success") {
+      loanRecordData = onSaveData['data']['record'];
+      this.saveApplicantInfoForm(loanRecordData)
+    }
+  }
+  applciantInfoFormSaveHandler(eventData) {
+    const onSaveData = eventData['detail'];
+    if (onSaveData['status'] === "success") {
+      this.resetAllStepsGoToLoanInfo();
+    } else {
+      this.focusStepApplicantInfo();
     }
   }
 
@@ -117,6 +138,50 @@ export class LoanApplicationComponent implements OnInit {
     });
     return isValidApplicantfoInfo;
   }
+  private saveLoanInfoForm() {
+    const loanInfoForm = this.loanInformationFormRef.nativeElement;
+    if (loanInfoForm.isValid()) {
+      loanInfoForm.saveRecord();
+    } else {
+      this.focusStepLoanInfo();
+    }
+  }
+  private saveApplicantInfoForm(loanRecordInfo: {}) {
+    const applicantInfoForm = this.applicantInfoFormRef.nativeElement;
+    //set linking field value
+    applicantInfoForm.setRecordData({
+      "loanapplications_record": { "id": loanRecordInfo['id'], "name": loanRecordInfo['record_locator'] }
+    })
 
+    if (applicantInfoForm.isValid()) {
+      applicantInfoForm.saveRecord();
+    } else {
+      this.focusStepApplicantInfo();
+    }
+  }
+  private focusStepLoanInfo() {
+    // refer matStepper APis
+    this.loanApplicationStepper.reset();
+  }
+  private focusStepApplicantInfo() {
+    // refer matStepper APis
+  }
+
+  private resetAllStepsGoToLoanInfo() {
+    const loanInfoForm = this.loanInformationFormRef.nativeElement;
+    const applicantInfoForm = this.applicantInfoFormRef.nativeElement;
+    loanInfoForm.resetRecord();
+    applicantInfoForm.resetRecord();
+    this.resetStepFormCtrls();
+    this.focusStepLoanInfo();
+  }
+  private resetStepFormCtrls() {
+    this.loanInfoFormGroup = this._formBuilder.group({
+      loanInfCtrl: [false, Validators.requiredTrue]
+    });
+    this.applicantInfoFormGroup = this._formBuilder.group({
+      applicantInfCtrl: [false, Validators.requiredTrue]
+    });
+  }
 
 }
