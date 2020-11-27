@@ -11,6 +11,7 @@ import { MatStepper } from '@angular/material/stepper';
 export class LoanApplicationComponent implements OnInit {
   isLinear = true;
   shouldPreview = false;
+  showSuccessfullMessage = false;
   loanInfoFormGroup: FormGroup;
   applicantInfoFormGroup: FormGroup;
 
@@ -49,9 +50,14 @@ export class LoanApplicationComponent implements OnInit {
 
   stepSelectionChange(stepChange: StepperSelectionEvent) {
     this.shouldPreview = stepChange.selectedStep.label === "Preview & Submit";
+    
+    
     switch (stepChange.selectedStep.label) {
       case "Loan Info":
 
+        break;
+      case "Preview & Submit":
+        this.showSuccessfullMessage = false;    
         break;
 
       default:
@@ -91,8 +97,10 @@ export class LoanApplicationComponent implements OnInit {
   applciantInfoFormSaveHandler(eventData) {
     const onSaveData = eventData['detail'];
     if (onSaveData['status'] === "success") {
+      this.showSuccessfullMessage = true;
       this.resetAllStepsGoToLoanInfo();
     } else {
+      this.showSuccessfullMessage = false;
       this.focusStepApplicantInfo();
     }
   }
@@ -170,10 +178,11 @@ export class LoanApplicationComponent implements OnInit {
   private resetAllStepsGoToLoanInfo() {
     const loanInfoForm = this.loanInformationFormRef.nativeElement;
     const applicantInfoForm = this.applicantInfoFormRef.nativeElement;
-    loanInfoForm.resetRecord();
-    applicantInfoForm.resetRecord();
+    // this.focusStepLoanInfo();
     this.resetStepFormCtrls();
-    this.focusStepLoanInfo();
+
+    // loanInfoForm.resetRecord();
+    // applicantInfoForm.resetRecord();
   }
   private resetStepFormCtrls() {
     this.loanInfoFormGroup = this._formBuilder.group({
