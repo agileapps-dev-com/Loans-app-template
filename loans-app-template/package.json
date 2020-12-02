@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "gen:template": "npm run build:themes && ng build --prod && npm run generate-template-meta",
+    "gen:template": "npm run build:themes && ng build --prod && npm run gen-template-meta",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -13,7 +13,7 @@
     "build:theme:pink": "node-sass -c ./src/assets/theme/pink/theme.scss -o ./src/assets/theme/pink/",
     "build:theme:pink-blue-gray": "node-sass -c ./src/assets/theme/pink-blue-gray/theme.scss -o ./src/assets/theme/pink-blue-gray/",
     "build:themes": "npm run build:theme:default && npm run build:theme:pink && npm run build:theme:pink-blue-gray ",
-    "generate-template-meta": "node utilities/generate-template-meta.js"
+    "gen-template-meta": "node utilities/generate-template-meta.js"
   },
   "private": true,
   "dependencies": {
