@@ -15,7 +15,7 @@ const templateMeta = {
             .then(obj => {
                 packageName = obj['name'] || null;
                 packageVersion = obj['version'] || null;
-                destitnationFile = "./dist/"+packageName+"/template-details.json"
+                destitnationFile = "./dist/" + packageName + "/template-details.json"
             })
             .catch(error => console.error(error))
     },
@@ -27,16 +27,16 @@ const templateMeta = {
 
     },
     createtemplateMetaJsonFile() {
-        if(destitnationFile){
+        if (destitnationFile) {
             jsonfile.writeFile(destitnationFile, templateMetaObj, { spaces: 2 }, function (err) {
                 if (err) console.error(err)
-              })
+            })
         }
 
     }
 }
 
-module.exports.test = function () {
+module.exports.init = function () {
 
     // readTemplateVersion();
     templateMeta.getTemplateNameAndVersion().then(() => {
@@ -44,4 +44,4 @@ module.exports.test = function () {
         templateMeta.createtemplateMetaJsonFile();
     })
 };
-this.test();
+this.init();
