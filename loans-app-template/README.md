@@ -20,6 +20,12 @@ Run `npm run build:themes` to compile all the supported theme scss files into cs
 
 Note: It is necessary to install node-sass compiler before running the above command. use `npm i node-sass -g ` to install it globally.
 
+## Build CUI template
+Run `npm run gen:tmpl` generates the cui template for packaging. It compiles the SCSS files used for theming, performs the producton build and generates the `templates-details.json`. 
+
+The generated CUI template artifacts will be available in the `./dist/loan-app-template/` directory. You will need to 'zip' this directory before uploading to agileapps platform.
+>Note: You might need to remove the *.scss and *.ico files present inside `./dist/loan-app-template/` directory before zipping it, unless you have explicitly white-listed these file extensions in your tenant. Otherwise, your template installation would fail.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
