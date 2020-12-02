@@ -5,7 +5,7 @@ A CUI template for Quick loan application.
 - Using Angular Framework.
 - Supports 3 different themes.
 - AgileApps application package included.
-- In-built scripts to building themes ( `npm run build:themes` ) and generating cui template artifacts (`npm run gen:tmpl`).
+- In-built scripts to building themes ( `npm run build:themes` ) and generating cui template artefacts (`npm run gen:tmpl`).
 - Pre-configured proxy support using `prox-conf.json` (Just need to replace the "target" values to a remote agileapps tenant sub-domain or instance).
 ## Prerequisites
 - Knowledge of [Angular](https://angular.io/docs) framework
