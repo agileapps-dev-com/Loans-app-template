@@ -7,7 +7,11 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:theme:default": "node-sass -c ./src/assets/theme/default/theme.scss -o ./src/assets/theme/default/",
+    "build:theme:pink": "node-sass -c ./src/assets/theme/pink/theme.scss -o ./src/assets/theme/pink/",
+    "build:theme:pink-blue-gray": "node-sass -c ./src/assets/theme/pink-blue-gray/theme.scss -o ./src/assets/theme/pink-blue-gray/",
+    "build:themes": "npm run build:theme:default && npm run build:theme:pink && npm run build:theme:pink-blue-gray "
   },
   "private": true,
   "dependencies": {
@@ -26,6 +30,7 @@
     "hammerjs": "^2.0.8",
     "jquery": "^3.5.1",
     "jquery-steps": "^1.1.0",
+    "node-sass": "^5.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
