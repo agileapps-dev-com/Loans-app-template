@@ -18,7 +18,7 @@ module.exports.init = function () {
         return jsonfile.readFile(packageFileSrc)
             .then(obj => {
                 packageName = obj['name'] || null;
-                packageVersion = obj['version'] || null;
+                packageVersion = ignorePatchVersionFromPackageVersion(obj['version'] || null); 
                 destitnationFile = "./dist/" + packageName + "/template-details.json";
                 console.log(`******** Generating CUI template meta data for ${packageName + nameSuffix}  (Version ${packageVersion}) ******** 
                 `);
@@ -44,6 +44,14 @@ module.exports.init = function () {
 
         }
 
+    }
+
+    function ignorePatchVersionFromPackageVersion(version) {
+        let majorMinorVersion = null;
+        if (version && version.split('.').length === 3) {
+            majorMinorVersion = version.split('.').slice(0, 2).join('.');
+        }
+        return majorMinorVersion;
     }
 
 

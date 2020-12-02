@@ -21,7 +21,7 @@ Note: It is necessary to install node-sass compiler before running the above com
 Run `npm run gen:tmpl` generates the cui template for packaging. It compiles the SCSS files used for theming, performs the producton build and generates the `templates-details.json`. 
 
 The generated CUI template artifacts will be available in the `./dist/loan-app-template/` directory. You will need to 'zip' this directory before uploading to agileapps platform.
->Note: You might need to remove the *.scss and *.ico files present inside `./dist/loan-app-template/` directory before zipping it, unless you have explicitly white-listed these file extensions in your tenant. Otherwise, your template installation would fail.
+>Note: You might need to remove the *.scss and *.ico files present inside `./dist/loan-app-template/` directory before zipping it, unless you have explicitly white-listed these file extensions in your AgileApps instance. Otherwise, your template installation would fail.
 
 ## Running unit tests
 
