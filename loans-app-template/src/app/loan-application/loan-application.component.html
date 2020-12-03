@@ -1,10 +1,10 @@
-<div class="page-container container-fluid h-100">
+<div class="page-container container-fluid ">
 
     <div class="page-content">
 
 
         <div class="row">
-            <div class="col ">
+            <div class="col-sm ">
                 <div class="header-logo ">
                     <h2 class="text-font-passion-one ">
                         <span class="ace-text-secondary">[</span>
@@ -18,10 +18,21 @@
                 </div>
 
             </div>
+            <div class="col-sm-2">
+                <div class="theme-switches">
+
+                    <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-default"
+                        (click)="switchTheme('default')"></a>
+                    <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-pink"
+                        (click)="switchTheme('pink')"></a>
+                    <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-pink-gray-blue"
+                        (click)="switchTheme('')"></a>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col"></div>
-            <div class="col-5">
+            <div class="col-sm"></div>
+            <div class="col-sm-5">
                 <div class="instructions-class">
 
                     <h2 class="ace-text-primary"> Application Instructions</h2>
@@ -52,7 +63,7 @@
                 </div>
 
             </div>
-            <div class="col-5">
+            <div class="col-sm-5">
                 <div class="form-card">
 
                     <mat-horizontal-stepper #loanApplicationStepper (selectionChange)="stepSelectionChange($event)"
@@ -146,12 +157,14 @@
                 </div>
 
             </div>
-            <div class="col"></div>
+            <div class="col-sm"></div>
         </div>
     </div>
     <div class="page-footer">
-        <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-default" (click)="switchTheme('default')"></a>
-        <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-pink" (click)="switchTheme('pink')"></a>
-        <a href="javascript:void(0)" class="theme-switch-link theme-switch-link-pink-gray-blue" (click)="switchTheme('')"></a>
+        <strong>
+
+        <small> &copy; [Q] Loans Inc. 2020 </small>
+    </strong>
+
     </div>
 </div>

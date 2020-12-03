@@ -4,7 +4,9 @@
 .header-logo h2 {
     margin: 0;
 }
-
+.page-container {
+    min-height: 100vh;
+}
 .instructions-class {
     padding: 60px 40px 20px 40px;
 }
@@ -53,24 +55,32 @@
     vertical-align: middle;
 }
 .page-footer {
-    position: relative;
+    position: absolute;
     z-index: 2;
+    bottom: 0;
+    text-align: center;
+    left: 0;
+    right: 0;
 }
-.theme-switch-link{
+.theme-switches {
+    text-align: right;
+    padding: 10px 0;
+}
+.theme-switch-link {
     padding: 2px 10px;
     margin: 0 5px;
     font-size: 1px;
     background-color: rgba(133, 133, 133, 0.438);
 }
-.theme-switch-link-default{
-    background-color: #FFF;
+.theme-switch-link-default {
+    background-color: #fff;
     border: 1px solid #00065e;
 }
-.theme-switch-link-pink{
+.theme-switch-link-pink {
     background-color: #ee0083;
     border: 1px solid #fff;
 }
-.theme-switch-link-pink-gray-blue{
+.theme-switch-link-pink-gray-blue {
     background-color: #607d8b;
     border: 1px solid #fff;
 }
