@@ -1,0 +1,87 @@
+$theme-primary-color: map-get($theme-colors, "primary");
+$theme-secondary-color: map-get($theme-colors, "secondary");
+
+//stepper settings
+.mat-step-icon {
+	background-color: map-get($theme-colors, "primary");
+	color: map-get($theme-colors, "light");
+}
+
+// loan card
+.form-card {
+	// box-shadow: 0 1px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: map-get($theme-colors, "dark");
+}
+
+//utility classes
+.button-separator-space {
+	margin-right: 10px;
+}
+
+html body {
+	background-color: map-get($theme-colors, "dark");
+	color: map-get($theme-colors, "light");
+	.page-container {
+		// background-image: url(./img/bg.png) ;
+		background-image: none;
+		position: relative;
+		background-size: cover;
+		background-position: 0 222px;
+		height: auto;
+		overflow: hidden;
+		&::before {
+			position: absolute;
+			content: " ";
+			left: 0;
+			right: 0;
+			background: $theme-secondary-color;
+			background: linear-gradient(332deg, $theme-secondary-color 0%, $theme-primary-color 100%);
+			top: 60px;
+			height: 2px;
+		}
+		&::after {
+			position: absolute;
+			content: " ";
+			left: 0;
+			right: 0;
+			background: $theme-secondary-color;
+			background: linear-gradient(332deg, $theme-secondary-color 0%, $theme-primary-color 100%);
+			/* top: 0; */
+			height: 500px;
+			transform: rotate(350deg);
+			width: 200%;
+			left: -4%;
+			bottom: -8%;
+		}
+		.page-content {
+			position: relative;
+			z-index: 1;
+
+			.instructions-class .disclaimer-text {
+				margin-top: 150px;
+				color: map-get($theme-colors, "light");
+			}
+
+			mat-horizontal-stepper .mat-horizontal-content-container {
+				padding: 0;
+			}
+
+			.preview-loan-info,
+			.preview-applicant-info {
+				border: 1px solid map-get($theme-colors, "secondary");
+			}
+		}
+	}
+
+	app-spinner {
+		.loader {
+			border: 4px solid map-get($theme-colors, "secondary") !important;
+			border-radius: 50%;
+			border-top: 4px solid map-get($theme-colors, "primary") !important;
+			width: 36px;
+			height: 36px;
+		}
+	}
+	
+}

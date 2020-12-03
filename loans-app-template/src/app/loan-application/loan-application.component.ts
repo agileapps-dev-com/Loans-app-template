@@ -121,6 +121,9 @@ export class LoanApplicationComponent implements OnInit {
       case "default":
         linHrefElem.href = 'assets/theme/default/theme.css';
         break;
+      case "green-blue-gray":
+        linHrefElem.href = 'assets/theme/green-blue-gray/theme.css';
+        break;
 
       default:
         linHrefElem.href = 'assets/theme/pink-blue-gray/theme.css';

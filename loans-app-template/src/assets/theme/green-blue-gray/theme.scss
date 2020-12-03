@@ -1,0 +1,29 @@
+
+$theme-colors: (
+  "primary": #69e91e,
+  "secondary": #607d8b,
+  "error": #b00020,
+  "light": #FFFFFF,
+  "dark": #343a40,
+  "gray": #f8f8f8
+  );
+  //import font
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500;600;800;900&display=swap');
+  
+  //set the base font family
+  $font-family-base: 'Raleway', sans-serif;
+
+  //ace-lib button styles
+  $ace-lib-btn-padding : 10px 20px;
+
+  $ace-lib-input-field-border-color: map-get($theme-colors, "secondary");
+  $ace-lib-input-field-background-color: map-get($theme-colors, "dark");
+  $ace-lib-input-field-text-color	: map-get($theme-colors, "light");
+
+  $ace-lib-checkbox-color	: map-get($theme-colors, "primary");
+  $ace-lib-radio-button-color		: map-get($theme-colors, "primary");
+
+
+
+@import "node_modules/ace-lib-theme/assets/scss/theme.scss";
+@import "./addon-styles.scss";
