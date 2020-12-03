@@ -15,5 +15,7 @@ A CUI template for Quick loan application.
 
 ## Getting started
 - Download this repository.
-- Do 'cd' `loans-app-template` and `npm i`.
-- Follow the  [getting started instructions](./loans-app-template/README.md)
+- Navigate to  `loans-app-template` and `npm i`.
+- Run `ng serve` or `npm run start` to start the dev server. Navigate to https://localhost:4200/
+- Do required changes and once ready for deployment, Run `npm run gen:tmpl` to generate the cui template.
+- More information available at  [instructions](./loans-app-template/README.md)
